@@ -1,0 +1,28 @@
+
+@if (song()){
+<app-natigation-bar [title]="song()!.name"></app-natigation-bar>
+}
+
+<main class="p-4">
+
+@if (song()){
+  <div class="flex flex-col gap-2">
+    @for(verse of song()?.verses;track verse.id){
+      <div class="py-1">
+        <p class="text-green-700 space-x-2.5">
+          @for(chord of verse.chords; track chord){
+            <span>{{chord}}</span>
+          }
+        </p>
+        <p>{{verse.verse}}</p>
+      </div>
+    }
+  </div>
+}
+
+@if (notFoundSongId()) {
+  <p>Ops! Não foi possível encontrar essa playlist.</p>
+  <p>ID {{notFoundSongId()}} desconhecido.</p>
+}
+
+</main>

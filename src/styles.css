@@ -1,3 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "tailwindcss";
+.card-item-container {
+  @apply p-4 border border-zinc-200 cursor-pointer rounded-lg bg-green-50;
+}

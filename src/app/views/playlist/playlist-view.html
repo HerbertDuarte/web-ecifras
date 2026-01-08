@@ -1,4 +1,6 @@
-
+@if (playlist()){
+  <app-natigation-bar [title]="playlist()!.name"></app-natigation-bar>
+}
 <main class="p-4">
 @if (playlist()){
   <div class="flex flex-col gap-2">

@@ -1,4 +1,4 @@
-import { Verse } from "./layer"
+import { Verse } from "./verse"
 import { Tone } from "./tone"
 
 export type Song = {

@@ -1,35 +1,35 @@
 import { Component, computed, inject, OnInit, signal } from "@angular/core";
-import { Playlist } from "../../models/playlist";
-import { JsonPipe } from "@angular/common";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs";
 import database from "../../../mock/database";
-import { SongItem } from "../../components/song/song-item/song-item";
+import { Song } from "../../models/song";
 import { NavigationBarComponent } from "../../components/layout/navigation-bar/navigation-bar";
 
 @Component({
-  imports: [SongItem, NavigationBarComponent],
-  templateUrl: "./playlist-view.html"
+  imports: [NavigationBarComponent],
+  templateUrl: "./song-view.html"
 })
-export class PlaylistView implements  OnInit{
+export class SongView implements  OnInit{
 
   route = inject(ActivatedRoute)
-  playlist = signal<Playlist | null>(null);
+  song = signal<Song | null>(null);
   notFoundSongId = signal<string | null>(null)
 
-  stringItem = computed(()=> JSON.stringify(this.playlist(),null,2))
+  stringItem = computed(()=> JSON.stringify(this.song(),null,2))
 
   ngOnInit(): void {
     this.route.params
       .pipe(first())
       .subscribe(params =>{
           const id = params['id'] as string;
-          const playlistFound = database.find(item => item.id === id)
-          if(!playlistFound){
+          const songs:Song[] = [];
+          database.forEach(playlist => songs.push(...playlist.songs))
+          const songFound = songs.find(song => song.id === id) ?? null
+          if(!songFound){
             this.notFoundSongId.set(id)
             return;
           }
-          this.playlist.set(playlistFound)
+          this.song.set(songFound)
       })
   }
 }
