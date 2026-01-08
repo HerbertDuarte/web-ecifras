@@ -1,0 +1,16 @@
+
+<main class="p-4">
+@if (playlist()){
+  <div class="flex flex-col gap-2">
+    @for(song of playlist()?.songs;track song.id){
+      <app-song-item [song]="song"></app-song-item>
+    }
+  </div>
+}
+
+@if (notFoundSongId()) {
+  <p>Ops! Não foi possível encontrar essa playlist.</p>
+  <p>ID {{notFoundSongId()}} desconhecido.</p>
+}
+
+</main>
