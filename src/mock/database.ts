@@ -17,9 +17,19 @@ const database: Playlist[] = [
             chords: ["E"]
           },
           {
+            id: "3-1-1",
+            verse: "Tuas palavras são mais desejáveis",
+            chords: ["E", "A","B"]
+          },
+          {
+            id: "3-1-1",
+            verse: "Que o mais doce mel",
+            chords: ["C#m", "A", "E"]
+          },
+          {
             id: "3-1-2",
             verse: "Tudo que tenho, Eu derramo aos Teus pés",
-            chords: ["E", "A", "C#m", "A", "E", "(2x)"]
+            chords: ["E", "A", "E", "C#m", "A", "E", "(2x)"]
           },
 
           {
@@ -35,7 +45,7 @@ const database: Playlist[] = [
           {
             id: "3-1-4",
             verse: "Como Maria, que estava aos seus pés",
-            chords: ["B", "(E/G#)", "A","(E/G#)", "B"]
+            chords: ["B",  "A"]
           },
         ]
       },
