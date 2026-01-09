@@ -1,6 +1,6 @@
 
 @if (song()){
-<app-navigation-bar [title]="song()!.name"></app-navigation-bar>
+<app-navigation-bar [title]="`${song()!.name} (${song()!.tone})`"></app-navigation-bar>
 }
 
 <main class="p-3">
