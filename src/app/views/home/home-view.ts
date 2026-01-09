@@ -7,13 +7,16 @@ import { NavigationBarComponent } from "../../components/layout/navigation-bar/n
   selector: 'app-home-view',
   imports: [PlaylistItem, NavigationBarComponent],
   templateUrl: './home-view.html',
+  host: {
+    class: 'container-view'
+  }
 })
 export class HomeView {
 
   playlists = database
 
   greeting = 'Bem vindo ao eCifras'
-
+  qrcodeUrl = "qrcode.png"
   buttonProps = {
     label: 'IBE', handleClick : function(){}
   }

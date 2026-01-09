@@ -1,4 +1,4 @@
 <div [routerLink]="`/song/${song().id}`" class="card-item-container">
-  <p>{{song().name}}</p>
-  <p>Versos: {{song().verses.length}}</p>
+  <p class="font-medium">{{song().name}} ({{song()!.tone}})</p>
+  <p>versos: {{song().verses.length}}</p>
 </div>

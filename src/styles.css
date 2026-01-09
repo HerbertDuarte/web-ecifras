@@ -4,7 +4,10 @@
 .card-item-container {
   @apply p-4 border border-zinc-200 cursor-pointer rounded-lg bg-green-50;
 }
-
+.container-view {
+  @apply flex flex-col h-full;
+  height: calc(100dvh - 120px);
+}
 
 @theme {
   --text-base: 1.1rem;
