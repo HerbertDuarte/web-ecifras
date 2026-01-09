@@ -1,4 +1,4 @@
 <div [routerLink]="`/playlist/${playlist().id}`" class="card-item-container">
   <p>{{playlist().name}}</p>
-  <p>Músicas: {{playlist().songs.length}}</p>
+  <p>{{playlist().songs.length}} {{playlist().songs.length == 1 ? "música" : "músicas"}}</p>
 </div>
