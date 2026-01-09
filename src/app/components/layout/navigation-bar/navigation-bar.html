@@ -1,5 +1,5 @@
 <div class="flex justify-between items-center px-4 pt-3">
-  <p class="text-md font-medium">{{title()}}</p>
+  <p class="font-medium">{{title()}}</p>
   @if(!button()){<app-button label="Voltar" (handleClick)="location.back()"/>}
   @if(button()){<app-button [label]="button()!.label" (handleClick)="button()!.handleClick()"/>}
 </div>

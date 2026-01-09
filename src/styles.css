@@ -4,3 +4,10 @@
 .card-item-container {
   @apply p-4 border border-zinc-200 cursor-pointer rounded-lg bg-green-50;
 }
+
+
+@theme {
+  --text-base: 1.1rem;
+  --text-lg: 1.2rem;
+  --text-sm: 0.9rem;
+}
